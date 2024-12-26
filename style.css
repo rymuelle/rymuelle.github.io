@@ -1,0 +1,55 @@
+css
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    }
+    .container {
+    display: flex;
+    min-height: 100vh;
+    }
+    .sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    }
+    .sidebar h1{
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    }
+    .sidebar nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 25px;
+    text-align: left;
+    }
+    .sidebar nav ul li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    }
+    .sidebar nav ul li a:hover {
+    background-color: #555;
+    }
+    .content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    }
+
+      
+.bio{
+    padding-top: 20px;
+}
+
+.bio h2{
+    text-align: center;
+}
