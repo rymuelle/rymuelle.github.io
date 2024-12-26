@@ -1,0 +1,36 @@
+css
+     .gallery {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center; /* or space-around or space-between */
+     gap: 15px; /* Space between images */
+     margin: 20px 0;
+     }
+
+     .gallery img {
+       width: 200px; /* Adjust as needed */
+       height: 200px; /* Or set to auto if you want to keep aspect ratio */
+       object-fit: cover; /* Ensures images maintain aspect ratio without stretching */
+       border-radius: 5px;
+       box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+     }
+ ```
+
+ * **pages/gallery.js**
+ ```javascript
+ document.addEventListener("DOMContentLoaded", function() {
+     const gallery = document.querySelector(".gallery");
+     const imagePaths = [
+     "../images/art1.jpeg",
+     "../images/art2.jpeg",
+     "../images/art3.jpeg"
+     // Add more image paths here
+     ];
+
+     imagePaths.forEach(imagePath => {
+         const img = document.createElement("img");
+         img.src = imagePath;
+         img.alt = "Artwork";
+         gallery.appendChild(img);
+         });
+     });
