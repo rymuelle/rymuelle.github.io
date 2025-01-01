@@ -64,7 +64,7 @@
          });
 
      overlay.addEventListener("click", (event) => {
-         if (event.target !== overlayImage && event.target.className !== "close-btn") {
+         if (event.target.className !== "close-btn") {
              closeOverlay();
          }
      });
