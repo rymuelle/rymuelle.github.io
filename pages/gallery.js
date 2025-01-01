@@ -58,7 +58,7 @@
          img.alt = "Artwork";
          img.addEventListener("click", () => {
             overlayImage.src = imagePath;
-            overlay.style.display = "flex";
+            overlay.style.display = "flexbox";
          });
          gallery.appendChild(img);
          });
