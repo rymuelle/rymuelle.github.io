@@ -30,7 +30,6 @@ margin: 20px 0;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     z-index: 9999; /* Ensure it's on top */
-    display: flex; /* Enable flexbox */
     justify-content: center;
     align-items: center;
 }
