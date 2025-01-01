@@ -1,9 +1,9 @@
  document.addEventListener("DOMContentLoaded", function() {
      const gallery = document.querySelector(".gallery");
      const imagePaths = [
-     "../images/art1.jpeg",
-     "../images/art2.jpeg",
-     "../images/art3.jpeg"
+     "../images/img.jpg",
+     "../images/img_01.jpg",
+     "../images/img_02.jpg"
      // Add more image paths here
      ];
 
