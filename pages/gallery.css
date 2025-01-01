@@ -42,13 +42,6 @@ margin: 20px 0;
     display: block;
 }
 
-img {
-  padding: inherit;
-  margin:auto;
-  width: 200px;
-  display: block;
-}
-
 .close-btn {
     position: absolute;
     top: 15px;
