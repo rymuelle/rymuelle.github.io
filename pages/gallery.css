@@ -1,16 +1,47 @@
-css
-     .gallery {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center; /* or space-around or space-between */
-     gap: 15px; /* Space between images */
-     margin: 20px 0;
-     }
 
-     .gallery img {
-       width: 200px; /* Adjust as needed */
-       height: 200px; /* Or set to auto if you want to keep aspect ratio */
-       object-fit: cover; /* Ensures images maintain aspect ratio without stretching */
-       border-radius: 5px;
-       box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow */
-     }
+.gallery {
+display: flex;
+flex-wrap: wrap;
+justify-content: center; /* or space-around or space-between */
+gap: 15px; /* Space between images */
+margin: 20px 0;
+}
+
+.gallery img {
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Or set to auto if you want to keep aspect ratio */
+  object-fit: cover; /* Ensures images maintain aspect ratio without stretching */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+}
+
+
+/* Overlay styles */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 9999; /* Ensure it's on top */
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
