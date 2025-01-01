@@ -3,6 +3,7 @@
      const overlay = document.getElementById("overlay");
      const overlayImage = document.getElementById("overlay-image");
      const imagePaths = [
+     "../images/img_42.jpg",
      "../images/img.jpg",
      "../images/img_01.jpg",
      "../images/img_02.jpg",
@@ -10,7 +11,7 @@
      "../images/img_04.jpg",
      "../images/img_05.jpg",
      "../images/img_06.jpg",
-     "../images/img_07.jpg",
+     //"../images/img_07.jpg",
      "../images/img_08.jpg",
      "../images/img_09.jpg",
      "../images/img_10.jpg",
@@ -43,9 +44,8 @@
      "../images/img_37.jpg",
      "../images/img_38.jpg",
      "../images/img_39.jpg",
-     "../images/img_40.jpg",
+     //"../images/img_40.jpg",
      "../images/img_41.jpg",
-     "../images/img_42.jpg",
      "../images/img_43.jpg",
      "../images/img_44.jpg",
      "../images/img_45.jpg",
