@@ -1,5 +1,7 @@
  document.addEventListener("DOMContentLoaded", function() {
      const gallery = document.querySelector(".gallery");
+     const overlay = document.getElementById("overlay");
+     const overlayImage = document.getElementById("overlay-image");
      const imagePaths = [
      "../images/img.jpg",
      "../images/img_01.jpg",
@@ -54,6 +56,10 @@
          const img = document.createElement("img");
          img.src = imagePath;
          img.alt = "Artwork";
+         img.addEventListener("click", () => {
+            overlayImage.src = imagePath;
+            overlay.style.display = "block";
+         });
          gallery.appendChild(img);
          });
      });
