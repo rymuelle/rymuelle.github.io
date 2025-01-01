@@ -40,8 +40,6 @@ margin: 20px 0;
     max-height: 90%;
     object-fit: contain;
     display: block;
-    justify-content: center;
-    align-items: center;
 }
 
 .close-btn {
