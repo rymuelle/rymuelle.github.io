@@ -40,7 +40,7 @@
      "../images/img_33.jpg",
      "../images/img_34.jpg",
      "../images/img_35.jpg",
-     "../images/img_36.jpg",
+     //"../images/img_36.jpg",
      "../images/img_37.jpg",
      "../images/img_38.jpg",
      "../images/img_39.jpg",
