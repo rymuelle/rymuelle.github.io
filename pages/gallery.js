@@ -62,7 +62,13 @@
          });
          gallery.appendChild(img);
          });
+
+     overlay.addEventListener("click", (event) => {
+         if (event.target !== overlayImage && event.target.className !== "close-btn") {
+             closeOverlay();
+         }
      });
+});
 
 function closeOverlay() {
     document.getElementById("overlay").style.display = "none";
