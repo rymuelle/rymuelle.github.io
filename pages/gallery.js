@@ -63,3 +63,7 @@
          gallery.appendChild(img);
          });
      });
+
+function closeOverlay() {
+    document.getElementById("overlay").style.display = "none";
+}
