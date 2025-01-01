@@ -3,7 +3,9 @@
      const imagePaths = [
      "../images/img.jpg",
      "../images/img_01.jpg",
-     "../images/img_02.jpg"
+     "../images/img_02.jpg",
+     "img.jpg",
+     "../img.jpg"
      // Add more image paths here
      ];
 
