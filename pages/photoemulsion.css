@@ -1,3 +1,15 @@
+header {
+    width: 100%;
+    overflow: hidden; /* Prevents image overflow from affecting layout */
+}
+
+header img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove potential whitespace below image */
+    object-fit: cover; /* or contain, depending on desired behavior */
+}
+
 .project-container {
      display: flex;
      margin-bottom: 20px;
