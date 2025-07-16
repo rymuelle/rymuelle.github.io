@@ -56,12 +56,14 @@ body {
 }
 
 .sidebar h1 {
+  margin: 0 0 var(--spacing-xl) 0;
   font-size: 1.25rem; /* Use rem units for accessible scaling */
   margin-bottom: var(--spacing-xl);
   color: var(--color-surface); /* Brighter white for the title */
   font-weight: 600;
   text-align: left;
 }
+
 
 .sidebar nav ul {
   list-style-type: none;
