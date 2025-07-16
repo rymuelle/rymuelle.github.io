@@ -49,7 +49,7 @@ body {
 /* --- 3. Polished Sidebar --- */
 .sidebar {
   width: 240px; /* Slightly wider for better spacing */
-  background-color: var(--color-sidebar-bg);
+  background-color: #1e293b;
   color: var(--color-sidebar-text);
   padding: var(--spacing-lg);
   box-sizing: border-box;
