@@ -32,7 +32,8 @@
 /* --- 2. Global Styles & Typography --- */
 body {
   font-family: var(--font-family-sans);
-  margin: 10px;
+  margin: 0 auto; /* Horizontally center */
+  padding: 10px; /* Use padding instead of margin for spacing */
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6; /* Improved readability */
