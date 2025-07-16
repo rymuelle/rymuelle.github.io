@@ -100,6 +100,9 @@ body {
 .content {
   flex: 1;
   padding: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Or center for vertical alignment */
 }
 
 .bio {
@@ -108,6 +111,8 @@ body {
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow);
   border: 1px solid var(--color-border);
+  max-width: 700px;
+  width: 100%;
 }
 
 .bio h2 {
