@@ -5,8 +5,8 @@
   --color-background: #f8f9fa; /* A very light, clean gray */
   --color-surface: #ffffff; /* For card backgrounds */
   --color-sidebar-bg: #1e293b; /* A dark slate blue instead of black */
-  --color-sidebar-text: #30196b; /* Soft off-white for text */
-  --color-sidebar-hover: rgba(255, 203, 140, 0.5); /* A translucent hover */
+  --color-sidebar-text: #d7e9ff; /* Soft off-white for text */
+  --color-sidebar-hover: rgba(255, 255, 255, 0.5); /* A translucent hover */
   
   --color-text: #334155; /* A darker, softer slate for body text */
   --color-heading: #1e293b;
@@ -47,7 +47,7 @@ body {
 
 /* --- 3. Polished Sidebar --- */
 .sidebar {
-  width: 240px; /* Slightly wider for better spacing */
+  width: 100px; /* Slightly wider for better spacing */
   background-color: var(--color-sidebar-bg);
   color: var(--color-sidebar-text);
   padding: var(--spacing-lg);
