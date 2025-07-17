@@ -121,3 +121,14 @@ body {
   font-size: 2rem;
   margin-bottom: var(--spacing-lg);
 }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
