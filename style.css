@@ -132,3 +132,11 @@ body {
 html, body {
   height: 100%;
 }
+
+
+ .main-image img {
+     width: 100%;
+     height: auto;
+     display: block; /* Removes any extra whitespace below image */
+     object-fit: cover;
+ }

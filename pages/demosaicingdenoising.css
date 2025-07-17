@@ -1,0 +1,56 @@
+header {
+    width: 100%;
+    overflow: hidden; /* Prevents image overflow from affecting layout */
+}
+
+header img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove potential whitespace below image */
+    object-fit: cover; /* or contain, depending on desired behavior */
+}
+
+.project-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.project-container-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+ .project-image {
+     flex: 1;
+     overflow: hidden; /* To contain the image within this div */
+ }
+
+ .project-image img {
+     width: 100%;
+     height: auto;
+     display: block; /* Removes any extra whitespace below image */
+     object-fit: cover;
+ }
+
+
+ .project-description {
+     flex: 2;
+     padding: 20px;
+ }
+
+ .project-description h3{
+     margin-bottom: 10px;
+ }
