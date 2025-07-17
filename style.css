@@ -135,7 +135,7 @@ html, body {
 
 
  .main-image img {
-     width: 50%;
+     width: 100%;
      height: auto;
      display: block; /* Removes any extra whitespace below image */
      object-fit: cover;
