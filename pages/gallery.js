@@ -49,6 +49,7 @@
      //"../images/img_43.jpg",
      "../images/img_44.jpg",
      "../images/img_45.jpg",
+     "../images/circus_celestia20250728_0103.jpg"
      // Add more image paths here
      ];
 
