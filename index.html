@@ -1,70 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ryan Mueller - Personal Website</title>
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Mueller - Personal Website</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
+
 <body>
     <div class="container">
         <aside class="sidebar">
             <nav>
-                <h1>Menu</h1>
+                <h1>Ryan Mueller</h1>
+                <p class="tagline">Software & Photography</p>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="pages/art.html">Photo Gallery</a></li>
                     <li><a href="pages/bread.html">Bread Recipes</a></li>
-                    <li><a href="pages/demosaicingdenoising.html">Learned Demosaicing and Denoising RAW Images</a></li>
-                    <li><a href="pages/photoemulsion.html">Photo Emulsion Project</a></li>
-                    <!-- <li><a href="pages/misc.html">Misc. Pages</a></li> -->
+                    <li><a href="pages/demosaicingdenoising.html">Denoising Project</a></li>
+                    <li><a href="pages/photoemulsion.html">Photo Emulsion</a></li>
                 </ul>
             </nav>
         </aside>
         <main class="content">
-            <section class="bio">
-                <h2>New release! Raw Refinery: an open source AI RAW denoiser</h2>
-
-                <div class="image-comparison">
-                    <!-- <img src="images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53.jpg" alt="Noisy Image"/>
-                    <img src="images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53_65534_denoised.DNG.jpg" alt="Denoised Image"/> -->
-                    <img src="images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa.jpg" alt="Noisy Image"/>
-                    <img src="images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa_65534_denoised.DNG.jpg" alt="Denoised Image"/>
-                </div>
-
-                <p>I have yet to find an photographic denoiser that I really like, so I set out to build one myself. Build on a light weight U-Net and trained on raw images from Canon, Nikon, and Sony cameras, Raw Refinery denoises the noisiest images while avoiding "plastic" look of other denoisers.
-                     The alpha release can be downloaded for Mac OS <a href="https://github.com/rymuelle/RawRefinery">here.</a> </p>
-
-                <p>Read more about Raw Refinery <a href="pages/demosaicingdenoising.html">here.</a> </p>
-                    
-
-               
-                <h2>Photography</h2>
-                <div class="main-image">
-                    <img src="images/img_20.jpg" alt="Just some ants">
-                </div>
-                <p>Photography has been my nearly life long hobby of choice, and I hardly travel anywhere without a camera. You'll find a small set of photos semi-arbitrarily selected in the Photo Gallery.</p>
-
-                <h2>Bread Baking</h2>
-                <div class="main-image">
-                    <img src="images/img_12.jpg" alt="Symmetry Sourdough">
-                </div>
-
-                <p>I almost love baking bread more than I like eating it, and I've been known as the "bread guy" at more than one location. I started baking after being inspired by a friend in grad school, and I particularly like baking lean doughs/french breads/sourdoughs like the one pictured above. You'll find some of my recipes on the bread page.</p>
-
-
-                <h2>Photo Emulsion Project</h2>
-                <div class="main-image">
-                    <img src="images/hexagon_is_bestagon.png" alt="Hexagon is bestagon">
-                </div>
-
-                <p>By far my most ambitious project, I set out to create the first publicly accessible vegan film since the days of collodians. I have invented my own photographic emulsion that has useable sensitivity laboring for a year on my homemade double jet injection setup. Now, I just gotta get the thing to stick to plastic!</p>
+            <div class="page-content">
                 
+                <section class="hero">
+                    <h2>New Release! Raw Refinery</h2>
+                    <p class="subtitle">An open-source AI denoiser for RAW photos.</p>
 
-            </section>
+                    <div class="image-comparison with-labels">
+                        <figure>
+                            <img src="images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa.jpg" alt="Noisy Image"/>
+                            <figcaption>Before (Noisy)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                            <figcaption>After (Denoised)</figcaption>
+                        </figure>
+                    </div>
+
+                    <p>Built on a lightweight U-Net and trained on raw images from Canon, Nikon, and Sony cameras, Raw Refinery denoises the noisiest images while avoiding the "plastic" look of other denoisers. </p>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://github.com/rymuelle/RawRefinery" class="cta-button primary">Download for macOS</a>
+                        <a href="pages/demosaicingdenoising.html" class="cta-button">Read the Details</a>
+                    </div>
+                </section>
+
+                <div class="projects-grid">
+                    
+                    <article class="project-card">
+                        <img class="card-image" src="images/img_20.jpg" alt="Just some ants">
+                        <div class="card-content">
+                            <h3>Photography</h3>
+                            <p>Photography has been my nearly life-long hobby, and I hardly travel anywhere without a camera. This gallery contains a small, semi-arbitrarily selected set of photos.</p>
+                            <a href="pages/art.html" class="card-link">View Gallery &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="card-image" src="images/img_12.jpg" alt="Symmetry Sourdough">
+                        <div class="card-content">
+                            <h3>Bread Baking</h3>
+                            <p>I almost love baking bread more than I like eating it. I particularly enjoy lean doughs and sourdoughs like the one pictured. Here are some of my favorite recipes.</p>
+                            <a href="pages/bread.html" class="card-link">See Recipes &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="card-image" src="images/hexagon_is_bestagon.png" alt="Hexagon is bestagon">
+                        <div class="card-content">
+                            <h3>Photo Emulsion Project</h3>
+                            <p>My most ambitious project: creating the first publicly accessible vegan film since the days of collodions. I've invented a new emulsion and am now perfecting the coating process.</p>
+                             <a href="pages/photoemulsion.html" class="card-link">Learn More &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
         </main>
     </div>
 </body>
 </html>
-```
