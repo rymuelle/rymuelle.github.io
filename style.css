@@ -111,9 +111,11 @@ body {
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow);
   border: 1px solid var(--color-border);
-  max-width: 700px;
+  max-width: 7000px;
   width: 100%;
 }
+
+
 
 .bio h2 {
   text-align: center;
@@ -140,3 +142,16 @@ html, body {
      display: block; /* Removes any extra whitespace below image */
      object-fit: cover;
  }
+
+
+ .image-comparison {
+  display: flex; /* Arranges children (the images) in a row */
+  gap: var(--spacing-md); /* Adds a consistent gap between the images */
+  margin-bottom: var(--spacing-lg); /* Adds some space below the images */
+}
+
+.image-comparison img {
+  width: 50%; /* Makes each image fill its container */
+  height: auto; /* Maintains the image's aspect ratio */
+  border-radius: var(--border-radius-md); /* Optional: rounds the corners to match your design */
+}
