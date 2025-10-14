@@ -22,75 +22,103 @@
             </nav>
          </aside>
          <main class="content">
+
+
+
                <section>
-                   <h2>Learned Demosaicing and Denoising RAW Images</h2>
+                   <h2>Raw Refinery</h2>
 
                    <div class="project-container">
                       <div class="project-image">
                         <img src="../images/demosaic_denoise/Bayer_pattern_on_sensor.svg.png" alt="Bayer Demo">
                       </div>
                       <div class="project-description">
-                         <h3>Learned Demosaicing and Denoising RAW Images</h3>
-                         <p> I am working to produce the first open source RAW image denoiser, and I have the novel goal of additionally improving the aesthetic characteristics of the noise, rather than simply improving the signal to noise ratio.  I am building this project on a U-Net architecture using CNN components for their strong image restoration ability and computational efficiency (over, for example, visual transformers). 
+                         <h3>What is Raw Refinery</h3>
+                         <p> Raw Refinery is the first open source RAW image denoiser, with the novel goal of additionally improving the aesthetic characteristics of the noise, rather than simply improving the signal to noise ratio. Operating on raw sensor data, it produces a high quality denoised DNG file ready to be edited in your favorite raw editing program. </a>. 
                          </p>
+                         <p></p>
+                         <h3>The tech behind Raw Refinery</h3>
                             <p>
-                            RAW images contain (relatively) unmodified sensor data, in the form of an ADC readout of each pixel.  Each pixel has a color filter over it, commonly in a Bayer array, which is a color filter array (CFA) of red, green, and blue pixels. It is preferable to work on low level data for denoising, but transforming this mono image into an color image is both an additional challenge and opportunity. 
+                               In order to best reconstruct clean images, RawRefinery works on the (relatively) unmodified sensor data, in the form of an ADC readout of each pixel. ach pixel has a color filter over it, commonly in a Bayer array, which is a color filter array (CFA) of red, green, and blue pixels. It is preferable to work on low level data for denoising, but transforming this mono image into an color image is both an additional challenge and opportunity. 
+                              The machine learning model learns to both "demosaic", that is, transform the mono image into a 3 channel color image, and denoise the the image simultaneously.
+
+                               RawRefineries machine learning model is built on a modified version of the <a href="https://github.com/megvii-research/NAFNet"> NAFNet<a> U-Net, enabling fast, high quality results that can be computed on your local machine. Custom channel attention modules enable the network to use a prior about the noise levels both to increase it's performance, and give the end user control over the model output, and novel skip connection merging optimally combines high level global information with fine grained local details to preserve textures while reducing noise. 
+                        
+                           
+                              The model is trained on the <a href="https://dataverse.uclouvain.be/dataset.xhtml?persistentId=doi:10.14428/DVN/DEQCIM"> RawNIND dataset</a>.
+                            
                             </p>
                       </div>
                    </div>
+               <h2>Examples of denoised images:</h2>
+
+              <div class="project-container">
+                     <div class="image-comparison with-labels">
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa.jpg" alt="Noisy Image"/>
+                            <figcaption>Before (Noisy)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                            <figcaption>After (Denoised)</figcaption>
+                        </figure>
+                    </div>
+                  </div>
 
 
-                        <div class="project-container-column">
+                 <div class="project-container">
+                     <div class="image-comparison with-labels">
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53.jpg" alt="Noisy Image"/>
+                            <figcaption>Before (Noisy)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                            <figcaption>After (Denoised)</figcaption>
+                        </figure>
+                    </div>
+                  </div>
 
-                      <div class="project-description">
-                         <h3>Demosaicing</h3>
-                   <p>
-                        The process of transforming a CFA mosaic into an RGB image is called demosaicing, and one of the advantages of using my “Restorer” U-Net is that it learns to demosaic better than traditional demosaicers! The end results have finer details and fewer artifacts, as shown in the demos below. 
-                        
-                        For this demo, I take a ground truth image (left), and simulate a bayer CFA mono image of the scene. This is inherently a lossy process, and as such this test strongly demonstrates the difficulty of demosaicing, because fine details on the pixel scale may only hit a single color pixel. We see this when using the Malvar demosaicer (center) on the simulated bayer image, which shows colorful artifacts on sharp edges. Because of this, modern camera manufactures apply filters that lose fine details.
-                        
-                        However, the Restorer U-Net can learn smart interpolation to reconstruct fine details without artifacts, as seen on the right!
-                   </p>
-                      </div>
+              <div class="project-container">
+                     <div class="image-comparison with-labels">
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_MuseeL-feathers-A7C_ISO65535_sha1=ef2e17aad79bc896773a80bcaea647b3d199df2d_01.jpg" alt="Noisy Image"/>
+                            <figcaption>Before (Noisy)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_MuseeL-feathers-A7C_ISO65535_sha1=ef2e17aad79bc896773a80bcaea647b3d199df2d_65534_denoised.DNG_01.jpg" alt="Denoised Image"/>
+                            <figcaption>After (Denoised)</figcaption>
+                        </figure>
+                    </div>
+                  </div>
 
-                        <div class="project-image">
-                        <img src="../images/demosaic_denoise/demosacing_demo_1.png" alt="Demosaicing Demo">
-                        <img src="../images/demosaic_denoise/demosacing_demo_11.png" alt="Demosaicing Demo">
-                        <img src="../images/demosaic_denoise/demosacing_demo_13.png" alt="Demosaicing Demo">
-                        <!-- <img src="../images/demosaic_denoise/demosacing_demo_36.png" alt="Demosaicing Demo"> -->
-                      </div>
-                   </div>                 
 
-                        <div class="project-container-column">
+              <div class="project-container">
+                     <div class="image-comparison with-labels">
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_TEST_boardgames_top_ISO65535_sha1=dde98261ee15a51d79768467f36352532406802f.jpg" alt="Noisy Image"/>
+                            <figcaption>Before (Noisy)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_TEST_boardgames_top_ISO65535_sha1=dde98261ee15a51d79768467f36352532406802f_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                            <figcaption>After (Denoised)</figcaption>
+                        </figure>
+                    </div>
+                  </div>
 
-                      <div class="project-description">
-                         <h3>Denoising</h3>
-                   <p>
-Additionally, the U-Net can learn to differentiate between details that likely come from noise vs the image, and remove the noise! I use a novel channel attention module that is both computationally efficient and allows for conditioning of the network based on the gain applied to the image so that the network can anticipate the noise level in the image. 
+              <div class="project-container">
+                     <div class="image-comparison with-labels">
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_TEST_Vaxt-i-trad_ISO65535_sha1=03f25da2ca87f0caa2d066992ab5c4ab277bc83f.jpg" alt="Noisy Image"/>
+                            <figcaption>Before (Noisy)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="../images/RawRefinery/Bayer_TEST_Vaxt-i-trad_ISO65535_sha1=03f25da2ca87f0caa2d066992ab5c4ab277bc83f_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                            <figcaption>After (Denoised)</figcaption>
+                        </figure>
+                    </div>
+                  </div>
 
- The below examples show the same demo as the demosaicing demo, but with gaussian noise injected into the bayer image. Here, we can see how the Restorer U-Net removes the noise while leaving sharp, clean lines in the image. Note, these results are not based on the final version of the model, which is trained on augmented raw data and real noise samples, and use perceptual losses to improve the visual aesthetics of the image. 
-                   </p>
-                      </div>
-
-                        <div class="project-image">
-                        <img src="../images/demosaic_denoise/demosacing_demo_25.png" alt="Denoising Demo">
-                        <img src="../images/demosaic_denoise/demosacing_demo_15.png" alt="Denoising Demo">
-                        <img src="../images/demosaic_denoise/demosacing_demo_23.png" alt="Denoising Demo">
-                      </div>
-                   </div>    
-                   
-                   
-                   <div class="project-container">
-                      <div class="project-image">
-                        <img src="../images/demosaic_denoise/gui.png" alt="Bayer Demo">
-                      </div>
-                      <div class="project-description">
-                         <h3>Status</h3>
-                         <p> Currently (July 2025), a GUI has been produced, and fine tuning on real data is underway! An alpha build should be produced soon.
-                         </p>
-
-                      </div>
-                   </div>
               </section>
            </main>
         </div>

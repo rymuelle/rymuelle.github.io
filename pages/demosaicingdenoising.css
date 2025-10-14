@@ -46,6 +46,8 @@ header img {
  }
 
 
+
+
  .project-description {
      flex: 2;
      padding: 20px;
@@ -54,3 +56,30 @@ header img {
  .project-description h3{
      margin-bottom: 10px;
  }
+
+
+ .image-comparison.with-labels {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+.image-comparison.with-labels figure {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+}
+.image-comparison.with-labels img {
+  width: 100%;
+  max-width: 600px;
+
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius-md);
+}
+.image-comparison.with-labels figcaption {
+  margin-top: var(--spacing-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+  opacity: 0.9;
+}
