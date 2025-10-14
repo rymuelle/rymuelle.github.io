@@ -49,7 +49,7 @@
                       <h3>What is Raw Refinery?</h3>
                       <p>Raw Refinery is the first open source RAW image denoiser. It has been trained with the goal of improving the aesthetic characteristics of the noise, rather than only improving the signal-to-noise ratio. Operating on raw sensor data, it produces a high-quality denoised DNG file ready to be edited in your favorite raw editing program.</p>
                       
-                      <h3>The Tech Behind Raw Refinery</h3>
+                      <h3>How Raw Refinery Works</h3>
                          <p>
                             In order to best reconstruct clean images, RawRefinery works on the (relatively) unmodified sensor data. Each pixel has a color filter over it, commonly in a Bayer array (a color filter array of red, green, and blue pixels). It is preferable to work on low-level data for denoising, but transforming this mono image into a color image is both an additional challenge and an opportunity.
                          </p>
@@ -86,17 +86,7 @@
                          <figcaption>After (Denoised)</figcaption>
                      </figure>
                  </div>
-                    <div class="image-comparison with-labels">
-                       <figure>
-                           <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa.jpg" alt="Noisy Image"/>
-                           <figcaption>Before (Noisy)</figcaption>
-                       </figure>
-                       <figure>
-                           <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa_65534_denoised.DNG.jpg" alt="Denoised Image"/>
-                           <figcaption>After (Denoised)</figcaption>
-                       </figure>
-                   </div>
-   
+
                   <div class="image-comparison with-labels">
                       <figure>
                           <img src="../images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53.jpg" alt="Noisy Image"/>
@@ -107,7 +97,6 @@
                           <figcaption>After (Denoised)</figcaption>
                       </figure>
                   </div>
-   
                  <div class="image-comparison with-labels">
                      <figure>
                          <img src="../images/RawRefinery/Bayer_MuseeL-feathers-A7C_ISO65535_sha1=ef2e17aad79bc896773a80bcaea647b3d199df2d_01.jpg" alt="Noisy Image"/>
@@ -128,6 +117,28 @@
                          <figcaption>After (Denoised)</figcaption>
                      </figure>
                  </div>
+
+                  <div class="image-comparison with-labels">
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_back_of_green_rug_daylight_ISO65535_sha1=5c3d5361df738868d11fb4fc1bd0867af084b2d4.jpg" alt="Noisy Image"/>
+                         <figcaption>Before (Noisy)</figcaption>
+                     </figure>
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_back_of_green_rug_daylight_ISO65535_sha1=5c3d5361df738868d11fb4fc1bd0867af084b2d4_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                         <figcaption>After (Denoised)</figcaption>
+                     </figure>
+                 </div>
+                    <div class="image-comparison with-labels">
+                       <figure>
+                           <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa.jpg" alt="Noisy Image"/>
+                           <figcaption>Before (Noisy)</figcaption>
+                       </figure>
+                       <figure>
+                           <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                           <figcaption>After (Denoised)</figcaption>
+                       </figure>
+                   </div>
+   
                  </section>
 
 
