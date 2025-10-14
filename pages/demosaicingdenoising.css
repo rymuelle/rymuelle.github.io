@@ -1,85 +1,64 @@
-header {
-    width: 100%;
-    overflow: hidden; /* Prevents image overflow from affecting layout */
+/* This rule creates the main white "article" box,
+  just like the .hero box on your homepage.
+*/
+.project-article {
+  background-color: var(--color-surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-border);
 }
 
-header img {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove potential whitespace below image */
-    object-fit: cover; /* or contain, depending on desired behavior */
-}
-
+/* This styles the intro section with the image on the left
+  and the description on the right.
+*/
 .project-container {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    background-color: white;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-xl);
 }
 
-.project-container-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    background-color: white;
+.project-image {
+    flex: 1;
+    min-width: 250px; /* Prevents it from getting too squished */
 }
 
- .project-image {
-     flex: 1;
-     overflow: hidden; /* To contain the image within this div */
- }
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+}
 
- .project-image img {
-     width: 100%;
-     height: auto;
-     display: block; /* Removes any extra whitespace below image */
-     object-fit: cover;
- }
+.project-description {
+    flex: 2;
+    min-width: 300px;
+}
 
+.project-description h3 {
+    font-size: 1.5rem;
+    color: var(--color-heading);
+    margin-bottom: var(--spacing-sm);
+}
 
+.project-description p {
+  margin-bottom: var(--spacing-md);
+}
 
-
- .project-description {
-     flex: 2;
-     padding: 20px;
- }
-
- .project-description h3{
-     margin-bottom: 10px;
- }
-
-
- .image-comparison.with-labels {
-  display: flex;
-  gap: var(--spacing-md);
+/* This styles the "Examples" section to give it
+  a clean heading and proper spacing.
+*/
+.examples-gallery h2 {
+  padding-top: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
 }
-.image-comparison.with-labels figure {
-  flex: 1;
-  margin: 0;
-  text-align: center;
-}
-.image-comparison.with-labels img {
-  width: 100%;
-  max-width: 600px;
 
-  height: auto;
-  display: block;
-  border-radius: var(--border-radius-md);
-}
-.image-comparison.with-labels figcaption {
-  margin-top: var(--spacing-sm);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text);
-  opacity: 0.9;
+/* This rule makes sure the image comparison blocks
+  have a little space between them.
+*/
+.image-comparison {
+  margin-bottom: var(--spacing-lg);
 }

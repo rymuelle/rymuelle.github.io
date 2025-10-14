@@ -1,130 +1,164 @@
-     <!DOCTYPE html>
-     <html lang="en">
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Learned Demosaicing and Denoising RAW Images</title>
-         <link rel="stylesheet" href="../style.css">
-         <link rel="stylesheet" href="demosaicingdenoising.css">
-     </head>
-     <body>
-       <div class="container">
-         <aside class="sidebar">
-            <nav>
-                <h1>Menu</h1>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="art.html">Photo Gallery</a></li>
-                    <li><a href="bread.html">Bread Recipes</a></li>
-                    <li><a href="demosaicingdenoising.html">Learned Demosaicing and Denoising RAW Images</a></li>
-                    <li><a href="photoemulsion.html">Photo Emulsion Project</a></li>
-                </ul>
-            </nav>
-         </aside>
-         <main class="content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Refinery - Project Details</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="demosaicingdenoising.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+       <nav>
+           <h1>Ryan Mueller</h1>
+           <p class="tagline">Software & Photography</p>
+           <ul>
+               <li><a href="../index.html">Home</a></li>
+               <li><a href="art.html">Photo Gallery</a></li>
+               <li><a href="bread.html">Bread Recipes</a></li>
+               <li><a href="demosaicingdenoising.html" class="active">Denoising Project</a></li>
+               <li><a href="photoemulsion.html">Photo Emulsion</a></li>
+           </ul>
+       </nav>
+    </aside>
+    <main class="content">
+        <div class="page-content">
+                <section class="hero">
+                    <h2>Introducing Raw Refinery</h2>
+                    <p class="subtitle">An open-source AI denoiser for RAW photos.</p>
 
 
+                    <p>Machine learning provides us with powerful tools to restore images, however, commercial solutions are both monetarily and computationally expensive. Raw Refinery is the first of it's kind: an open-source and computationally efficient denoiser that delivers professional results. Download an alpha version with the link below for MacOS. Windows and Linux releases will follow shortly!</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://github.com/rymuelle/RawRefinery" class="cta-button primary">Download for macOS</a>
+                    </div>
+                </section>
 
-               <section>
-                   <h2>Raw Refinery</h2>
 
-                   <div class="project-container">
-                      <div class="project-image">
-                        <img src="../images/demosaic_denoise/Bayer_pattern_on_sensor.svg.png" alt="Bayer Demo">
-                      </div>
-                      <div class="project-description">
-                         <h3>What is Raw Refinery</h3>
-                         <p> Raw Refinery is the first open source RAW image denoiser, with the novel goal of additionally improving the aesthetic characteristics of the noise, rather than simply improving the signal to noise ratio. Operating on raw sensor data, it produces a high quality denoised DNG file ready to be edited in your favorite raw editing program. </a>. 
-                         </p>
-                         <p></p>
-                         <h3>The tech behind Raw Refinery</h3>
-                            <p>
-                               In order to best reconstruct clean images, RawRefinery works on the (relatively) unmodified sensor data, in the form of an ADC readout of each pixel. ach pixel has a color filter over it, commonly in a Bayer array, which is a color filter array (CFA) of red, green, and blue pixels. It is preferable to work on low level data for denoising, but transforming this mono image into an color image is both an additional challenge and opportunity. 
-                              The machine learning model learns to both "demosaic", that is, transform the mono image into a 3 channel color image, and denoise the the image simultaneously.
+            <article class="project-article">
+                
+                <h2>Raw Refinery</h2>
 
-                               RawRefineries machine learning model is built on a modified version of the <a href="https://github.com/megvii-research/NAFNet"> NAFNet<a> U-Net, enabling fast, high quality results that can be computed on your local machine. Custom channel attention modules enable the network to use a prior about the noise levels both to increase it's performance, and give the end user control over the model output, and novel skip connection merging optimally combines high level global information with fine grained local details to preserve textures while reducing noise. 
-                        
-                           
-                              The model is trained on the <a href="https://dataverse.uclouvain.be/dataset.xhtml?persistentId=doi:10.14428/DVN/DEQCIM"> RawNIND dataset</a>.
-                            
-                            </p>
-                      </div>
+                <div class="project-container">
+                   <div class="project-image">
+                     <img src="../images/RawRefinery/cond_naf_block.png" alt="Bayer Demo">
                    </div>
-               <h2>Examples of denoised images:</h2>
+                   <div class="project-description">
+                      <h3>What is Raw Refinery?</h3>
+                      <p>Raw Refinery is the first open source RAW image denoiser. It has been trained with the goal of improving the aesthetic characteristics of the noise, rather than only improving the signal-to-noise ratio. Operating on raw sensor data, it produces a high-quality denoised DNG file ready to be edited in your favorite raw editing program.</p>
+                      
+                      <h3>The Tech Behind Raw Refinery</h3>
+                         <p>
+                            In order to best reconstruct clean images, RawRefinery works on the (relatively) unmodified sensor data. Each pixel has a color filter over it, commonly in a Bayer array (a color filter array of red, green, and blue pixels). It is preferable to work on low-level data for denoising, but transforming this mono image into a color image is both an additional challenge and an opportunity.
+                         </p>
+                         <p>
+                           The machine learning model learns to both "demosaic" (transform the mono image into a 3-channel color image) and denoise the image simultaneously.
+                         </p>
+                         <p>
+                            Raw Refinery's model is built on a modified version of the <a href="https://github.com/megvii-research/NAFNet">NAFNet</a> U-Net, enabling fast, high-quality results. Custom channel attention modules use noise level priors to increase performance and give the user control over the output. The model is trained on the <a href="https://dataverse.uclouvain.be/dataset.xhtml?persistentId=doi:10.14428/DVN/DEQCIM">RawNIND dataset</a>.
+                        </p>
+                        <p>
+                           Just as important as the model architecture, a hand-tailored loss is used to preserve textures, with a custom random-initlized VGG style perceptual loss designed to maximize edge details and texture. 
+                        </p>
 
-              <div class="project-container">
-                     <div class="image-comparison with-labels">
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa.jpg" alt="Noisy Image"/>
-                            <figcaption>Before (Noisy)</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa_65534_denoised.DNG.jpg" alt="Denoised Image"/>
-                            <figcaption>After (Denoised)</figcaption>
-                        </figure>
-                    </div>
+                      <h3>NAFBlock</h3>
+                      <p>To the left, we see my current version of the NAF block, complete with the conditioned channel attention module. The block first uses a mobile-net-like inverted residual block with a depth wise convolution. The channel attention module allows for global context, while the simple gate, replacing the standard ReLU or GELU activation can actually perform a spatial attention like role. Followed by this spatial mixing block, two point-wise convolutions form a feed-forward style network, mimicking that found in a transformer. </p>
+                        
+                      <h3>Coming soon!</h3>
+                        <p>
+                           Look for the Windows and Linux releases shortly (Nov. 2025), and a white paper on the design behind it. 
+                        </p>
+                   </div>
+                </div>
+
+                <section class="examples-gallery">
+                    <h2>Denoising Examples</h2>
+
+                  <div class="image-comparison with-labels">
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_TEST_Vaxt-i-trad_ISO65535_sha1=03f25da2ca87f0caa2d066992ab5c4ab277bc83f.jpg" alt="Noisy Image"/>
+                         <figcaption>Before (Noisy)</figcaption>
+                     </figure>
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_TEST_Vaxt-i-trad_ISO65535_sha1=03f25da2ca87f0caa2d066992ab5c4ab277bc83f_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                         <figcaption>After (Denoised)</figcaption>
+                     </figure>
+                 </div>
+                    <div class="image-comparison with-labels">
+                       <figure>
+                           <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa.jpg" alt="Noisy Image"/>
+                           <figcaption>Before (Noisy)</figcaption>
+                       </figure>
+                       <figure>
+                           <img src="../images/RawRefinery/Bayer_TEST_MuseeL-bluebirds-A7C_ISO65535_sha1=eb9cb3e1d80f48b93d0aabe20458870c5c1ef2fa_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                           <figcaption>After (Denoised)</figcaption>
+                       </figure>
+                   </div>
+   
+                  <div class="image-comparison with-labels">
+                      <figure>
+                          <img src="../images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53.jpg" alt="Noisy Image"/>
+                          <figcaption>Before (Noisy)</figcaption>
+                      </figure>
+                      <figure>
+                          <img src="../images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                          <figcaption>After (Denoised)</figcaption>
+                      </figure>
                   </div>
+   
+                 <div class="image-comparison with-labels">
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_MuseeL-feathers-A7C_ISO65535_sha1=ef2e17aad79bc896773a80bcaea647b3d199df2d_01.jpg" alt="Noisy Image"/>
+                         <figcaption>Before (Noisy)</figcaption>
+                     </figure>
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_MuseeL-feathers-A7C_ISO65535_sha1=ef2e17aad79bc896773a80bcaea647b3d199df2d_65534_denoised.DNG_01.jpg" alt="Denoised Image"/>
+                         <figcaption>After (Denoised)</figcaption>
+                     </figure>
+                 </div>
+                 <div class="image-comparison with-labels">
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_TEST_boardgames_top_ISO65535_sha1=dde98261ee15a51d79768467f36352532406802f.jpg" alt="Noisy Image"/>
+                         <figcaption>Before (Noisy)</figcaption>
+                     </figure>
+                     <figure>
+                         <img src="../images/RawRefinery/Bayer_TEST_boardgames_top_ISO65535_sha1=dde98261ee15a51d79768467f36352532406802f_65534_denoised.DNG.jpg" alt="Denoised Image"/>
+                         <figcaption>After (Denoised)</figcaption>
+                     </figure>
+                 </div>
+                 </section>
 
 
-                 <div class="project-container">
-                     <div class="image-comparison with-labels">
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53.jpg" alt="Noisy Image"/>
-                            <figcaption>Before (Noisy)</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_MuseeL-colorfulchemicalsandbird-A7C_ISO65535_sha1=fbae45af0dc8260874a00e626f4a0c6b0419ed53_65534_denoised.DNG.jpg" alt="Denoised Image"/>
-                            <figcaption>After (Denoised)</figcaption>
-                        </figure>
-                    </div>
-                  </div>
+                  <div class="project-container">
+                   <div class="project-image">
+                     <img src="../images/demosaic_denoise/Bayer_pattern_on_sensor.svg.png" alt="Bayer Demo">
+                   </div>
+                   <div class="project-description">
+                      <h3>Short Term Priorities and Future features</h3>
+                        <ol>
+                        <li>Windows and Linux support</li>
+                        <li>Fix for blotching, banding and dark areas in raw images</li>
+                        <li>Improving model performance and adding threading</li>
+                        <li> X-Trans support</li>
+                        </ol>
+                      <h3>Long Term Priorities and Future features</h3>
+                     <ol>
+                        <li>Additional Raw Refining models such as an AI highlight reconstruction model</li>
+                        <li>Improved demosaicing performance</li>
+                        <li>Batch and scripting support</li>
+                     </ol>
+                     <h3>Acknowledgements</h3>
+                     <ol>
+                        <li>I'd like the thank the authors of NAFNet for their work providing a blueprint for computationally efficient, SOTA image reconstruction.  </li>
+                        <li>In addition, I'd like to thank the authors of RawNIND for supplying a high quality raw image dataset.</li>
+                     </ol>
 
-              <div class="project-container">
-                     <div class="image-comparison with-labels">
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_MuseeL-feathers-A7C_ISO65535_sha1=ef2e17aad79bc896773a80bcaea647b3d199df2d_01.jpg" alt="Noisy Image"/>
-                            <figcaption>Before (Noisy)</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_MuseeL-feathers-A7C_ISO65535_sha1=ef2e17aad79bc896773a80bcaea647b3d199df2d_65534_denoised.DNG_01.jpg" alt="Denoised Image"/>
-                            <figcaption>After (Denoised)</figcaption>
-                        </figure>
-                    </div>
-                  </div>
+                </div>
+             </article>
 
-
-              <div class="project-container">
-                     <div class="image-comparison with-labels">
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_TEST_boardgames_top_ISO65535_sha1=dde98261ee15a51d79768467f36352532406802f.jpg" alt="Noisy Image"/>
-                            <figcaption>Before (Noisy)</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_TEST_boardgames_top_ISO65535_sha1=dde98261ee15a51d79768467f36352532406802f_65534_denoised.DNG.jpg" alt="Denoised Image"/>
-                            <figcaption>After (Denoised)</figcaption>
-                        </figure>
-                    </div>
-                  </div>
-
-              <div class="project-container">
-                     <div class="image-comparison with-labels">
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_TEST_Vaxt-i-trad_ISO65535_sha1=03f25da2ca87f0caa2d066992ab5c4ab277bc83f.jpg" alt="Noisy Image"/>
-                            <figcaption>Before (Noisy)</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="../images/RawRefinery/Bayer_TEST_Vaxt-i-trad_ISO65535_sha1=03f25da2ca87f0caa2d066992ab5c4ab277bc83f_65534_denoised.DNG.jpg" alt="Denoised Image"/>
-                            <figcaption>After (Denoised)</figcaption>
-                        </figure>
-                    </div>
-                  </div>
-
-              </section>
-           </main>
-        </div>
-     </body>
-     </html>
-
-
-
-
+        </div> </main>
+    </div>
+  </body>
+  </html>
