@@ -63,6 +63,8 @@
                            Just as important as the model architecture, a hand-tailored loss is used to preserve textures, with a custom random-initlized VGG style perceptual loss designed to maximize edge details and texture. 
                         </p>
 
+                        <p>Model architecture and training code is currently being collated in <a href="https://github.com/rymuelle/Restorer/tree/feature/mps">this repository.</a></p>
+
                       <h3>NAFBlock</h3>
                       <p>To the left, we see my current version of the NAF block, complete with the conditioned channel attention module. The block first uses a mobile-net-like inverted residual block with a depth wise convolution. The channel attention module allows for global context, while the simple gate, replacing the standard ReLU or GELU activation can actually perform a spatial attention like role. Followed by this spatial mixing block, two point-wise convolutions form a feed-forward style network, mimicking that found in a transformer. </p>
                         
